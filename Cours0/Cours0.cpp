@@ -2,10 +2,47 @@
 //
 
 #include <iostream>
-
+#include <string>
+using namespace std;
+struct Toto {
+    float x = 0.777f;
+};
 int main()
 {
-    std::cout << "Hello World!\n";
+#pragma region Old
+    /*//std::cout << "Hello World!\n";
+    printf("12345\n");
+    printf("0\n");
+    string zero = "0";
+    char zeroC[] = "0";
+
+    cout << zeroC << " c++ style \n";
+    //console.print( zeroC )
+    printf("%s c style\n", zeroC);
+    printf("%f \n", 0.66666f);
+
+    float half = 0.5f;
+    cout << half << "\n";
+    printf("%f\n", half);
+    cout << to_string(half) << "\n";
+
+    int test = 123456789123456789;//supérieur à 2 milliards donc + de 32 bits
+    printf("%i\n", test);
+    cout << test << "\n";
+    cout << to_string(test) << "\n";
+    printf("%d\n", 773);
+
+    int64_t test2 = 123456789123456789;//supérieur à 2 milliards donc + de 32 bits
+    printf("%lld\n", test2);
+    cout << test2 << "\n";
+    cout << to_string(test2) << "\n";*/
+#pragma endregion
+    cout << "12345" << endl;
+    cout << "12345\n";
+    cout << to_string(12345) << "\n";
+    Toto a;
+    //vfdsbbd
+    cout << to_string(a.x) << "\n";
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
