@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <unordered_map>
 using namespace std;
 struct Toto {
     float x = 0.777f;
@@ -35,16 +36,64 @@ int main()
     int64_t test2 = 123456789123456789;//supérieur à 2 milliards donc + de 32 bits
     printf("%lld\n", test2);
     cout << test2 << "\n";
-    cout << to_string(test2) << "\n";*/
-#pragma endregion
+    cout << to_string(test2) << "\n";
+
     cout << "12345" << endl;
     cout << "12345\n";
     cout << to_string(12345) << "\n";
     Toto a;
-    //vfdsbbd
     cout << to_string(a.x) << "\n";
-}
+#pragma endregion
+    unordered_map<int, string> t;
+    t[0] = "toto";
+    t[1] = "tata";
+    t[2] = "tutu";
+    t[3] = "titi";
+    //cout << t[0] << t[1] << t[2] << t[3] << "\n";
 
+    for (auto iter = t.begin(); iter != t.end(); iter++) {
+        auto& p = *iter;
+        cout << p.first << "=" << p.second << "\n";
+    }
+
+    for (auto& p : t) {
+        cout << p.first << "=" << p.second << "\n";
+    }
+
+    pair<int, string> p0 = *t.begin();
+    p0.first = 3;
+    cout << (*t.begin()).first << "\n";
+
+    for (pair<const int, string>& p : t) {
+        cout << p.first << "=" << p.second << "\n";
+    }
+
+    int c = 0;
+    int tab[] = { 5,9,13,2,4 };
+    int* d = &tab[0];
+    d++;
+    *d = 773;
+    int* e0 = nullptr;
+    int* e1 = NULL;
+    int* e2 = 0;
+    int here = 0;
+
+    vector<uint64_t> p;
+    for (int i = 0; i < 10000; i++) {
+        p.push_back(i);
+    }
+    for (int i = 0; i < p.size(); i++) {
+        uint64_t& pelem = p[i];
+    }*/
+
+    int tab[] = { 66,6,2,3 };
+    int* c = &tab[0];
+    *c = 0;
+    *c++;
+    (*c)++;
+    *++c;
+    ++*c;
+}
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
 // Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
 
