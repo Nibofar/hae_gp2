@@ -11,7 +11,7 @@ struct Toto {
 int main()
 {
 #pragma region Old
-    /*//std::cout << "Hello World!\n";
+    //std::cout << "Hello World!\n";
     printf("12345\n");
     printf("0\n");
     string zero = "0";
@@ -68,7 +68,7 @@ int main()
         cout << p.first << "=" << p.second << "\n";
     }
 
-    int c = 0;
+    /*int c = 0;
     int tab[] = { 5,9,13,2,4 };
     int* d = &tab[0];
     d++;
@@ -76,7 +76,7 @@ int main()
     int* e0 = nullptr;
     int* e1 = NULL;
     int* e2 = 0;
-    int here = 0;
+    int here = 0;*/
 
     vector<uint64_t> p;
     for (int i = 0; i < 10000; i++) {
@@ -84,7 +84,7 @@ int main()
     }
     for (int i = 0; i < p.size(); i++) {
         uint64_t& pelem = p[i];
-    }*/
+    }
 
     int tab[] = { 66,6,2,3 };
     int* c = &tab[0];
