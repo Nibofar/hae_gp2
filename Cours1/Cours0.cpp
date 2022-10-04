@@ -100,13 +100,18 @@ int main()
     v1.addRef(v0);
     v1.addPtr(&v0);*/
 
-    /*vec4 v0(2, 7, 1, 3);
+    vec4 v0(2, 7, 1, 3);
     vec4 v1(7, 7, 3, 9);
-
-    v1.add(v0);
-    v1.sub(v0);
-    v1.mul(v0);
-    v1.div(v0);
-    v1.incr(v0);*/
+    vec4 test;
+    test = v1.add(v0);
+    if (test.w != 9) throw "fail";
+    test = v1.sub(v0);
+    if (test.w != 5) throw "fail";
+    test = v1.mul(v0);
+    if (test.w != 14) throw "fail";
+    test = v1.div(v0);
+    if (test.w != 3.5f) throw "fail";
+    v1.incr(v0);
+    if (v1.w != 9) throw "fail";
     int here = 0;
 }
