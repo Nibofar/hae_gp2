@@ -8,8 +8,7 @@ using namespace std;
 static void assert(bool test) {
     if (!test) throw "assert";
 }
-int main()
-{
+int main(){
     testVec();
     testStr();
     testArray();
