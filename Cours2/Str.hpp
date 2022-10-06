@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 /*['s'][][][][][0] <- fin de chaîne de caractère
 \0 ~= '0'
 0
