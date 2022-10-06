@@ -5,6 +5,7 @@
 #include "Vec.hpp"
 #include "Str.hpp"
 #include "LinkedListInt.hpp"
+#include "IntTree.hpp"
 using namespace std;
 static void assert(bool test) {
     if (!test) throw "assert";
@@ -12,7 +13,8 @@ static void assert(bool test) {
 int main(){
     /*testVec();
     testStr();
-    testArray();*/
-    testLinkedList();
+    testArray();
+    testLinkedList();*/
+    testBinaryTree();
     int here = 0;
 }
