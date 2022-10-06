@@ -21,7 +21,7 @@ protected:
     int* data = nullptr;
     int size = 0;
 };
-void testArray() {
+static void testArray() {
     IntArray muttsu(5);
     muttsu.set(0, 8);
     muttsu.set(1, 2);

@@ -71,7 +71,7 @@ struct vec4 {
         z += v.z;
     }
 };
-void testVec() {
+static void testVec() {
     /*vec3 sapin;
 
 vec3 v0(6, 7, 2);
