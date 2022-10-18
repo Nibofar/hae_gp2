@@ -6,6 +6,12 @@ public:
 			dest[i] = src[i];
 		}
 	}
+	static void MemcpyRec(char* dest, const char* src, int size) {
+		if (size <= 0) return;
+		*dest = *src;
+		MemcpyRec(dest + 1, src + 1, size - 1);
+		return;
+	}
 	static const char* StrChr(const char* src, char c) {
 		while (*src && (*src != c)) {
 			src++;

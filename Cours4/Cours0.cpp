@@ -8,6 +8,7 @@
 #include "IntTree.hpp"
 #include "FloatArray.hpp"
 #include "StringTree.hpp"
+#include "Lib.hpp"
 using namespace std;
 static void assert(bool test) {
     if (!test) throw "assert";
@@ -33,4 +34,8 @@ int main(){
     //testC();
     //testFloatArray();
     testStringTree();
+    char stock[] = { 0, 2, 4, 5, 7, 8 };
+    char nuCopy[6];
+    Lib::MemcpyRec(nuCopy, stock, 6);
+    int here = 0;
 }
