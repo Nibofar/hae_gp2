@@ -9,6 +9,7 @@
 #include "FloatArray.hpp"
 #include "StringTree.hpp"
 #include "Lib.hpp"
+#include "Int64Array.hpp"
 using namespace std;
 static void assert(bool test) {
     if (!test) throw "assert";
@@ -29,15 +30,11 @@ int main(){
     /*testVec();
     testStr();
     testArray();
-    testLinkedList();*/
-    //testBinaryTree();
-    //testC();
-    //testFloatArray();
-    //testStringTree();
-    const char stock[] = "lapin";
-    //char nuCopy[5];
-    //Lib::MemcpyRec(nuCopy, stock, 6);
-    assert(Lib::StrStrRec(stock, "la"));
-    printf("ok");
-    int here = 0;
+    testLinkedList();
+    testBinaryTree();
+    testC();
+    testFloatArray();
+    testStringTree();
+    Lib::testLib();*/
+    testInt64Array();
 }
