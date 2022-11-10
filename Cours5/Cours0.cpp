@@ -11,8 +11,8 @@
 #include "Lib.hpp"
 #include "Int64Array.hpp"
 #include "LinkedList.hpp"
-#include "BinaryTree.hpp"
 using namespace std;
+#include "BinaryTree.hpp"
 static void assert(bool test) {
     if (!test) throw "assert";
 }

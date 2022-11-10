@@ -1,5 +1,5 @@
 #pragma once
-
+#include <string>
 template<typename Type>
 class BinaryTree {
 public:
@@ -9,20 +9,20 @@ public:
 	BinaryTree(Type val) {
 		key = val;
 	}
+	int size() {
+		int sz = 1;
+		if (left) sz += left->size();
+		if (right) sz += right->size();
+		return sz;
+	}
 	BinaryTree* insert(Type val) {
 		if (val < key) {
 			if (left) left = left->insert(val);
-			else {
-				left = new BinaryTree(val);
-				left->key = val;
-			}
+			else left = new BinaryTree(val);
 		}
 		else {
 			if (right) right = right->insert(val);
-			else {
-				right = new BinaryTree(val);
-				right->key = val;
-			}
+			else right = new BinaryTree(val);
 		}
 		return this;
 	};
@@ -30,67 +30,72 @@ public:
 		if (key == val) {
 			auto oldLeft = left;
 			auto oldRight = right;
-			if (!oldRight && !oldLeft) {
-				delete this;
-				return nullptr;
-			}
-			else if (!oldRight) {
-				delete this;
-				return oldRight;
-			}
-			else if (!oldLeft) {
-				delete this;
-				return oldLeft;
-			}
-			if (left) {
-
+			delete this;
+			if (!right && !left) return nullptr;
+			else if (!oldRight)	return oldRight;
+			else if (!oldLeft) return oldLeft;
+			else while (left) {
+				auto temp = left->key;
+				left = left->remove(temp);
+				right = right->insert(temp);
 			}
 			return right;
 		}
+		else if (left && (key <= val)) left = left->remove(val);
+		else if (right && key >= val) right = right->remove(val);
+		return this;
 	};
+	BinaryTree* search(Type val) {
+		
+	}
 	void print();
 };
 template<>
-void BinaryTree<std::string>::print() {
-	if (left)
-		left->print();
-	std::cout << key << " ";
-	if (right)
-		right->print();
+void BinaryTree<string>::print() {
+	if (left) left->print();
+	cout << key << " ";
+	if (right) right->print();
 }
 template<typename Type>
 void BinaryTree<Type>::print() {
-	if (left)
-		left->print();
-	std::cout << std::to_string(key) << " ";
-	if (right)
-		right->print();
+	if (left) left->print();
+	cout << key << " ";
+	if (right) right->print();
 }
 template<typename Type>
 class BinaryTreeController {
 	BinaryTree<Type>* trunk = nullptr;
+	int size() {
+		if (!trunk) return 0;
+		return trunk->size();
+	}
 	void insert(Type val){
 		if (!trunk) trunk = new BinaryTree(val);
 		else trunk->insert(val);
 	}
 	void remove(Type val) {
-
+		trunk = trunk->remove(val);
 	}
 	void print() {
 		if (trunk) {
 			trunk->print();
-			std::cout << "\n";
+			cout << "\n";
 		}
-		else std::cout << "[]\n";
+		else cout << "[]\n";
 	}
 };
 typedef BinaryTreeController<int> ti;
 typedef BinaryTreeController<float> tf;
-typedef BinaryTreeController<std::string> ts;
+typedef BinaryTreeController<string> ts;
 static void testTree(){
 	BinaryTree<int> bti(66);
 	BinaryTree<std::string> bts("sapin");
-
 	bti.insert(4);
+	bti.insert(16);
+	bti.insert(8);
+	bti.insert(70);
 	bti.print();
+	bti.remove(16);
+	bti.print();
+	int here = 0;
 }
