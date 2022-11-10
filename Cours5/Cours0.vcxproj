@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Int64Array.cpp" />
     <ClCompile Include="IntTree.cpp" />
     <ClCompile Include="Cours0.cpp" />
     <ClCompile Include="IntArray.cpp" />
@@ -149,12 +150,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FloatArray.hpp" />
+    <ClInclude Include="Int64Array.hpp" />
     <ClInclude Include="IntTree.hpp" />
     <ClInclude Include="IntArray.hpp" />
     <ClInclude Include="Lib.hpp" />
+    <ClInclude Include="LinkedList.hpp" />
     <ClInclude Include="LinkedListInt.hpp" />
     <ClInclude Include="Str.hpp" />
     <ClInclude Include="StringTree.hpp" />
+    <ClInclude Include="BinaryTree.hpp" />
     <ClInclude Include="Vec.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,4 +1,8 @@
 #pragma once
+#include <chrono>
+#include <ctime>
+using namespace std;
+using namespace std::chrono;
 class Lib {
 public:
 	static void Memcpy(char* dest, const char* src, int size) {
@@ -143,6 +147,20 @@ public:
 		if (a < 0) return -divTerminalRecursion(-a, b, res);
 		if (a < b) return res;
 		return 1 + divTerminalRecursion(sub(a, b), b, res);
+	}
+	/*static int rand() {
+		static bool isInit = false;
+		if (!isInit) {
+			clock_t now = clock();
+			srand(now);
+		}
+		return rand();
+	}*/
+	static double getTimeStamp() {
+		int n = 0;
+		while (n < 1000000000) n++;
+		nanoseconds ns = duration_cast<nanoseconds>(system_clock::now().time_since_epoch());
+		return ns.count() / 1000000000.0;
 	}
 	static void testLib() {
 		/*const char stock[] = "lapin";

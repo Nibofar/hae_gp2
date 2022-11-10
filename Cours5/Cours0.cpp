@@ -10,6 +10,8 @@
 #include "StringTree.hpp"
 #include "Lib.hpp"
 #include "Int64Array.hpp"
+#include "LinkedList.hpp"
+#include "BinaryTree.hpp"
 using namespace std;
 static void assert(bool test) {
     if (!test) throw "assert";
@@ -35,6 +37,8 @@ int main(){
     testC();
     testFloatArray();
     testStringTree();
-    Lib::testLib();*/
+    Lib::testLib();
     testInt64Array();
+    testTemplateList();*/
+    testTree();
 }
